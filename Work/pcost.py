@@ -1,6 +1,6 @@
 # pcost.py
 #
-# Exercise 1.31
+# Exercise 1.30 to 1.33
 
 import csv
 import sys
