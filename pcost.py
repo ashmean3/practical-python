@@ -3,7 +3,6 @@
 # Exercise 1.30 to 1.33
 
 import csv
-import sys
 
 def portfolio_cost(filename):
     '''
@@ -11,23 +10,23 @@ def portfolio_cost(filename):
     '''
     total_cost = 0.0
 
-    a = open('Data/portfolio.csv', 'rt')
-    rows = csv.reader(a)
-    headers = next(rows)
-    for row in rows:
-        try:
-            shares = int(row[1])
-            price = float(row[2])
-            total_cost += shares * price
+    with open(filename) as a:
+        rows = csv.reader(a)
+        headers = next(rows)
+        for rowno, row in enumerate(rows):
+            try:
+                shares = int(row[1])
+                price = float(row[2])
+                total_cost += shares * price
 
         # To catch errors in the input file:
 
-        except ValueError:
-            print('Bad row:', row)
+            except ValueError:
+                print(f'Row {rowno}: Bad row: {row}')
 
     return total_cost
-    a.close()
     
+import sys    
 
 if len(sys.argv) == 2:
     filename = sys.argv[1]
