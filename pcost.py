@@ -1,6 +1,6 @@
 # pcost.py
 #
-# Exercise 1.30 to 1.33
+
 
 import csv
 
@@ -13,7 +13,7 @@ def portfolio_cost(filename):
     with open(filename) as a:
         rows = csv.reader(a)
         headers = next(rows)
-        for rowno, row in enumerate(rows):
+        for rowno, row in enumerate(rows, start = 2):
             try:
                 shares = int(row[1])
                 price = float(row[2])
