@@ -57,13 +57,14 @@ def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','
 
     return records
 
-records= parse_csv('Data/portfolio.csv', types= [str, int, float])
-print(records)
-records= parse_csv('Data/portfolio.csv', types= [str, int], select = ['name', 'shares'])
-print(records)
-#records= parse_csv('Data/prices.csv', select = ['name', 'price'], has_headers=False)
-#print(records)
-records= parse_csv('Data/portfolio.dat', types= [str, int, float], delimiter=' ')
-print(records)
-portfolio=parse_csv('Data/missing.csv', types=[str, int, float], silence_errors=True)
-print(portfolio)
+if __name__ == "__main__":
+    records= parse_csv('Data/portfolio.csv', types= [str, int, float])
+    print(records)
+    records= parse_csv('Data/portfolio.csv', types= [str, int], select = ['name', 'shares'])
+    print(records)
+    #records= parse_csv('Data/prices.csv', select = ['name', 'price'], has_headers=False)
+    #print(records)
+    records= parse_csv('Data/portfolio.dat', types= [str, int, float], delimiter=' ')
+    print(records)
+    portfolio=parse_csv('Data/missing.csv', types=[str, int, float], silence_errors=True)
+    print(portfolio)
