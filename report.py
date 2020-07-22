@@ -54,5 +54,14 @@ def portfolio_report(portfolio_filename, price_filename):
     report    = make_report_data(portfolio, prices)
     print_report(report)
 
-portfolio_report('Data/portfolio.csv', 'Data/prices.csv') 
+# portfolio_report('Data/portfolio.csv', 'Data/prices.csv') 
 
+def main(args):
+    if len(args) != 3:
+        print('Usage: python report.py <portfolio.csv> <prices.csv>')
+    else:
+        portfolio_report(args[1], args[2])
+
+if __name__ == '__main__':
+    import sys
+    main(sys.argv) 
