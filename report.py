@@ -15,7 +15,7 @@ def read_prices(filename):
     '''
     Read a CSV file of price data into a dict mapping names to prices.
     '''
-
+   
     prices= parse_csv(filename, types=[str,float], has_headers=False)
     prices= dict(prices)
     
