@@ -70,4 +70,4 @@ def portfolio_report(portfolio_filename, price_filename):
     report    = make_report_data(portfolio, prices)
     print_report(report)
 
-portfolio_report('Data/portfolio.csv', 'Data/prices.csv')
+portfolio_report('Data/portfolio.csv', 'Data/prices.csv') 
